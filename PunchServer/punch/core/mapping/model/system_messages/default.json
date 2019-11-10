@@ -1,0 +1,4 @@
+{
+    "status_code": "$body.system_message.status_code",
+    "message": "$body.system_message.message"
+}

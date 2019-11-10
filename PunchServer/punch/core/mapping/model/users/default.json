@@ -1,0 +1,4 @@
+{
+    "username": "$body.user.username",
+    "email": "$body.user.email"
+}

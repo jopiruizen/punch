@@ -1,0 +1,57 @@
+{
+    "version": "0.0.1",
+    "business_actions": [
+
+        {
+            "action": {
+                "type": "create",
+                "collection": "user"
+            },
+
+            "condition": {
+                "collection" : "users",
+                "request_fields": ["requestBody.profile.username" ,"requestBody.profile.email"],
+                "conditional_operators":["!==", "!=="],
+                "collection_fields":["username","email"],
+                "logical_operators":["||"]
+            },
+
+            "response_logic": {
+                "collections_lookup":[
+                    {
+                        "name" : "system_messages",
+                        "lookup": "code",
+                        "lookup_value":"success_on_create"
+                    },
+
+                    {
+                        "name":"users",
+                        "lookup":"username",
+                        "lookup_field_value":"request.profile.username"
+                    }
+
+                ],
+
+                "responses": [
+                    {
+                        "response_field": "requestHeader.message",
+                        "collection": "system_messages", 
+                        "collection_field": "description"
+                    },
+
+                    {
+                        "response_field": "requestHeader.message",
+                        "value":{  "collection" : "system_messages", "field":"description" }
+                    },
+
+
+                ]
+                
+            }
+            
+
+            
+        }
+
+    ]
+}

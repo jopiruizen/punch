@@ -1,0 +1,10 @@
+{
+    "header": {
+        "version":"1.00",
+        "status_code": "$system_message.status_code",
+        "message": "$system_message.message"
+    },
+    "body": {
+        "content": "$content"
+    }
+}

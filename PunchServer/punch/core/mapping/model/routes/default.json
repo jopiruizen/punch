@@ -1,0 +1,9 @@
+{
+    "path": "$body.route.path",
+    "type": "$body.route.type",
+    "collections": "$body.route.collections",
+    "snippet": "$body.route.snippet",
+    "response_mapping":"$body.route.response_mapping",
+    "model_mapping": "$body.route.model_mapping",
+    "map_model_name": "$body.route.model"
+}

@@ -1,0 +1,26 @@
+{
+    "version" : "0.00.01",
+
+    "business_actions": [
+        {
+            "name": "Create User Account",
+            "type": "create",
+            "collection": "users",
+            "rules": [
+                {
+                    
+                    "request_field": "requestBody.user.email",
+                    "collect_field": "email",
+                    "operation": "not_equal"
+                },
+                {
+                    "request_field": "requestBody.user.username",
+                    "collect_field": "username",
+                    "operation": "not_equal"
+                }
+            ]
+
+        }
+    ]
+
+}

@@ -1,0 +1,33 @@
+{
+    "routes": [
+        { 
+            "path": "/api/user/register",
+            "type": "create",
+            "collections": ["users", "system_messages"],
+            "script": "users/new.js",
+            "response_mapping":"users/default.json",
+            "model_mapping": "users/default.json",
+            "map_model_name":"user"
+        },
+
+        {
+            "path": "/api/routes/new",
+            "type": "create",
+            "collections": ["routes", "system_messages"],
+            "script": "routes/new.js",
+            "response_mapping":"routes/default.json",
+            "model_mapping": "routes/default.json",
+            "map_model_name":"route"
+        },
+
+        {
+            "path": "/api/system_messages/new",
+            "type": "create",
+            "collections": ["system_messages"],
+            "script": "system_messages/new.js",
+            "response_mapping":"system_messages/default.json",
+            "model_mapping": "system_messages/default.json",
+            "map_model_name":"system_message"
+        }
+    ]
+}
